@@ -63,7 +63,9 @@ export function getPropByPath(obj, path, strict) {
   return {
     o: tempObj,
     k: keyArr[i],
-    v: tempObj ? tempObj[keyArr[i]] : null
+    v: tempObj ? 
+                tempObj[keyArr[i]] instanceof Date ?tempObj[keyArr[i]].toLocaleString() :tempObj[keyArr[i]]
+              : null
   };
 };
 
